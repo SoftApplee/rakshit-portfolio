@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #3b82f6;
+  --color-primary-hover: #2563eb;
+  --color-accent: #60a5fa;
+  --color-accent-hover: #3b82f6;
+  
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-space), system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --border: #e2e8f0;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --accent: #2563eb;
+}
+
+.dark {
+  --background: #090d16;
+  --foreground: #f8fafc;
+  --muted: #111827;
+  --muted-foreground: #94a3b8;
+  --border: #1e293b;
+  --card: #0f172a;
+  --card-foreground: #f8fafc;
+  --accent: #3b82f6;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.4);
+}
+
+/* Subtle dot grid background */
+.bg-subtle-grid {
+  background-size: 32px 32px;
+  background-image: 
+    radial-gradient(circle, rgba(148, 163, 184, 0.15) 1px, transparent 1px);
+}
+.dark .bg-subtle-grid {
+  background-image: 
+    radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+}
